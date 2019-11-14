@@ -15,6 +15,9 @@ public class ColumnModel {
     //java类型
     private String javaType;
 
+    //jdbc类型
+    private String jdbcType;
+
     //是否主键
     private Boolean isPrimaryKey;
 
@@ -150,5 +153,13 @@ public class ColumnModel {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getJdbcType() {
+        return jdbcType;
+    }
+
+    public void setJdbcType(String jdbcType) {
+        this.jdbcType = jdbcType;
     }
 }

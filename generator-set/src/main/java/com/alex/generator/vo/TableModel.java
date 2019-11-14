@@ -40,7 +40,7 @@ public class TableModel {
     private String objectName;
 
     //主键列
-    private String primaryKey;
+    private ColumnModel primaryKey;
 
     //表名
     private String name;
@@ -125,11 +125,11 @@ public class TableModel {
         this.objectName = objectName;
     }
 
-    public String getPrimaryKey() {
+    public ColumnModel getPrimaryKey() {
         return primaryKey;
     }
 
-    public void setPrimaryKey(String primaryKey) {
+    public void setPrimaryKey(ColumnModel primaryKey) {
         this.primaryKey = primaryKey;
     }
 
