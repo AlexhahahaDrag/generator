@@ -1,5 +1,6 @@
 package com.alex.dbms.service.impl;
 
+import com.alex.dbms.dao.DatabaseDAOFactory;
 import com.alex.dbms.dao.IDatabaseDao;
 import com.alex.dbms.model.*;
 import com.alex.dbms.service.DatabaseService;
@@ -25,7 +26,7 @@ public class DatabaseServiceImpl implements DatabaseService {
         List<Map<String, String>> maps = new ArrayList<>();
         if (connParam == null)
             return maps;
-        IDatabaseDao dao =
+        IDatabaseDao dao = DatabaseDAOFactory.getDao(connParam);
         return null;
     }
 

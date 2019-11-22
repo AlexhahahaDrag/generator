@@ -1,6 +1,7 @@
 package com.alex.dbms.dao;
 
 import com.alex.dbms.constants.DBMSConstants;
+import com.alex.dbms.dao.impl.CommonDatabaseDAOImpl;
 import com.alex.dbms.vo.ConnParam;
 
 /**
@@ -15,7 +16,7 @@ public class DatabaseDAOFactory {
     public static IDatabaseDao getDao(ConnParam connParam) {
         String upperCaseDbName = connParam.getDbType().toUpperCase();
         if (upperCaseDbName.contains(DBMSConstants.ORACLE)) {
-            return new Comm
+            return new CommonDatabaseDAOImpl(connParam, DaseT)
         }
     }
 }
