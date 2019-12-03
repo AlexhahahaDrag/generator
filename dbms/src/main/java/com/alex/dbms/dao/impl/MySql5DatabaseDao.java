@@ -37,6 +37,6 @@ public class MySql5DatabaseDao extends CommonDatabaseDAOImpl {
             for (String param : params)
                 realParams[index++] = param;
         }
-        return super.query(sql, params);
+        return super.query(sql, realParams);
     }
 }

@@ -6,10 +6,10 @@
         <![CDATA[
         SELECT
             table_name TABLE_NAME,
-            table_comment TABLE_COMMENT
+            table_comment DESCRIPTION
         FROM information_schema.TABLES
-        wehre table_schema = ?
-            AND table_type = 'BASE_TABLE'
+        where table_schema = ?
+            AND table_type = 'BASE TABLE'
         ORDER BY table_name
         ]]>
     </select>

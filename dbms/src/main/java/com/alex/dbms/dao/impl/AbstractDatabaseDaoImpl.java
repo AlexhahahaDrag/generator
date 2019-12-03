@@ -7,7 +7,6 @@ import com.alex.dbms.exception.QueryDAOException;
 import com.alex.dbms.model.*;
 import com.alex.dbms.vo.ConnParam;
 
-import java.nio.channels.IllegalChannelGroupException;
 import java.sql.*;
 import java.util.*;
 
@@ -57,7 +56,7 @@ public abstract class AbstractDatabaseDaoImpl implements IDatabaseDao {
         ResultSet rs = null;
         try {
             preparedStatement = connection.prepareStatement(sql);
-            if (preparedStatement != null) {
+            if (params != null) {
                 for (int paramIndex = 0; paramIndex < params.length; paramIndex++)
                     preparedStatement.setString(paramIndex + 1, params[paramIndex]);
             }
@@ -190,6 +189,7 @@ public abstract class AbstractDatabaseDaoImpl implements IDatabaseDao {
             properties.put("remarksReporting", "true");
             properties.put("user", connParam.getUserName());
             properties.put("password", connParam.getPassword());
+            String url = getUrl(connParam.getHost(), connParam.getPort(), connParam.getDbName());
             connection = DriverManager.getConnection(getUrl(connParam.getHost(), connParam.getPort(), connParam.getDbName()), properties);
         } catch (ClassNotFoundException e) {
             String errorMsg = "连接创建失败，找不到相关驱动类（" + e.getMessage() + ")";

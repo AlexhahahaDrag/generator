@@ -55,7 +55,7 @@ public class CommonDatabaseDAOImpl extends AbstractDatabaseDaoImpl{
 
     @Override
     protected String getUrl(String host, int port, String dbName) {
-        return String.format(url, host, port, dbName);
+        return String.format(url, host, port, dbName + "?serverTimezone=UTC&useUnicode=true&zeroDateTimeBehavior=convertToNull&autoReconnect=true&characterEncoding=utf-8");
     }
 
     protected String getQuerySql(String sqlKey) throws DAOException {

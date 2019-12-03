@@ -22,7 +22,7 @@ public class DatabaseDAOFactory {
         else if (upperCaseDbName.contains(DBMSConstants.SQL_SERVICE))
             return new CommonDatabaseDAOImpl(connParam, DatabaseType.MSSQLServer);
         else if (upperCaseDbName.contains(DBMSConstants.MYSQL))
-            return new CommonDatabaseDAOImpl(connParam, DatabaseType.MySql5);
+            return new MySql5DatabaseDao(connParam, DatabaseType.MySql5);
         return new MySql5DatabaseDao(connParam, DatabaseType.MySql5);
     }
 }
