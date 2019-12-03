@@ -15,7 +15,7 @@
     <description>Demo project for Spring Boot</description>
 
     <properties>
-        <java.versirsion>11</java.versirsion>
+        <java.versirsion>1.8</java.versirsion>
     </properties>
 
     <dependencies>

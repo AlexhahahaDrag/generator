@@ -5,6 +5,7 @@ import com.alex.dbms.dao.IDatabaseDao;
 import com.alex.dbms.model.*;
 import com.alex.dbms.service.DatabaseService;
 import com.alex.dbms.vo.ConnParam;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -18,7 +19,7 @@ import java.util.Map;
  * @Version:    1.0
  *
 */
-@Service
+@Component
 public class DatabaseServiceImpl implements DatabaseService {
 
     @Override

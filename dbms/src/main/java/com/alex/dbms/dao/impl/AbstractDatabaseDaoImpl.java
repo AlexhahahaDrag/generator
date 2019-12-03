@@ -26,21 +26,21 @@ public abstract class AbstractDatabaseDaoImpl implements IDatabaseDao {
 
     private Connection connection;
 
-    private static final String DRIVER = "driver";
+    protected static final String DRIVER = "driver";
 
-    private static final String URL = "url";
+    protected static final String URL = "url";
 
-    private static final String QUERY_TABLE = "query_table";
+    protected static final String QUERY_TABLE = "query_table";
 
-    private static final String QUERY_COLUMN = "query_column";
+    protected static final String QUERY_COLUMN = "query_column";
 
-    private static final String QUERY_INDEX = "query_index";
+    protected static final String QUERY_INDEX = "query_index";
 
-    private static final String QUERY_PRIMARY_KEY = "query_primary_key";
+    protected static final String QUERY_PRIMARY_KEY = "query_primary_key";
 
-    private static final String QUERY_FOREIGN_KEY = "query_foreign_key";
+    protected static final String QUERY_FOREIGN_KEY = "query_foreign_key";
 
-    private static final String QUERY_TRIGGER = "query_trigger";
+    protected static final String QUERY_TRIGGER = "query_trigger";
 
     public AbstractDatabaseDaoImpl(ConnParam connParam) {
         this.connParam = connParam;

@@ -32,6 +32,8 @@ public class OracleMetaDataConverter extends CommonMetaDataConverter{
     @Override
     public Index convertMap2Index(Map<String, String> map) {
         Index index = super.convertMap2Index(map);
-        index.setUnique("NONUNIQUE".equals(getValue(map, "IS_")));
+        index.setUnique("NONUNIQUE".equals(
+                getValue(map, "IS_UNIQUE")) ? false : true);
+        return index;
     }
 }

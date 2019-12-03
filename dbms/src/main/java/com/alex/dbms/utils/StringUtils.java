@@ -1,5 +1,6 @@
 package com.alex.dbms.utils;
 
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -37,7 +38,7 @@ public class StringUtils {
     public static String lineToHump(String str) {
         str = str.toLowerCase();
         Matcher matcher = linePattern.matcher(str);
-        StringBuilder sb = new StringBuilder();
+        StringBuffer sb = new StringBuffer();
         while(matcher.find())
             matcher.appendReplacement(sb, matcher.group(1).toUpperCase());
         matcher.appendTail(sb);
@@ -53,7 +54,7 @@ public class StringUtils {
     */
     public static String humpToLine(String str) {
         Matcher matcher = humpPattern.matcher(str);
-        StringBuilder sb = new StringBuilder();
+        StringBuffer sb = new StringBuffer();
         while (matcher.find())
             matcher.appendReplacement(sb, "_" + matcher.group(0).toLowerCase());
         matcher.appendTail(sb);
