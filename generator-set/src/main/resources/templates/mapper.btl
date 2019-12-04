@@ -9,7 +9,7 @@ import ${table.modelPackageName}.${table.className};
  * ${table.description} (${table.className}Mapper)
  *------------------------
  * author: alex
- * createDate: ${strutil.fromateDate(date(), 'yyyy-MM-dd HH:mm:ss')}
+ * createDate: ${strutil.formatDate(date(), 'yyyy-MM-dd HH:mm:ss')}
  * description: 我是由代码生成器生成
  * version: 1.0.0
  */

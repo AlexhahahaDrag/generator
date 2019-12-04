@@ -41,6 +41,7 @@ public class CommonMetaDataConverter implements IMetaDataConverter {
             column.setLength(dataPrecision);
         else
             column.setLength(getValue(map, "DATA_LENGTH"));
+        column.setPrecision(getValue(map, "DATA_SCALE"));
         String nullable = getValue(map, "NULLABLE");
         if ("N".equalsIgnoreCase(nullable) || "NO".equalsIgnoreCase(nullable) || "NOT".equalsIgnoreCase(nullable))
             column.setNullable(false);

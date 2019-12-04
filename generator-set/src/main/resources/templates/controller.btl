@@ -13,21 +13,21 @@ import org.springframework.web.bind.annotation.RestController;
 import com.louis.kitty.core.http.HttpResult;
 import com.louis.kitty.core.page.PageRequest;
 
-import ${table.modelPackageName}.${table.clasName};
-import ${table.modelPackageName}.${table.className}Service;
+import ${table.modelPackageName}.${table.className};
+import ${table.servicePackageName}.${table.className}Service;
 
 /**
  *-------------------------------
  * ${table.description} (${table.className}Controller)
  *------------------------
  * author: alex
- * createDate: ${strutil.fromateDate(date(), 'yyyy-MM-dd HH:mm:ss')}
+ * createDate: ${strutil.formatDate(date(), 'yyyy-MM-dd HH:mm:ss')}
  * description: 我是由代码生成器生成
  * version: 1.0.0
  */
  @RestController
  @RequestMapping("${table.objectName}")
-public interface ${table.className}Controller {
+public class ${table.className}Controller {
 
     @Autowired
     private ${table.className}Service ${table.objectName}Service;
@@ -57,7 +57,7 @@ public interface ${table.className}Controller {
      *@param ${table.primaryKey.fieldName}
      *@return
     */
-    @PostMapping(value = "/findById")
+    @GetMapping(value = "/findById")
     public HttpResult findById(@RequestParam("${table.primaryKey.fieldName}") ${table.primaryKey.javaType} ${table.primaryKey.fieldName}) {
         return HttpResult.ok(${table.objectName}Service.findById(${table.primaryKey.fieldName}));
     }

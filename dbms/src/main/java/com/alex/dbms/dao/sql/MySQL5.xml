@@ -21,12 +21,12 @@
             table_name TABLE_NAME,
             data_type DATA_TYPE,
             character_maximum_length DATA_LENGTH,
-            mumeric_precision DATA_PRECISION,
-            menuric_scale DATA_SCALE,
+            numeric_precision DATA_PRECISION,
+            numeric_scale DATA_SCALE,
             is_nullable NULLABLE,
             column_default DEFAULT_VALUE,
-            cloumn_comment DESCRIPTION
-        FROM information_schema.cloumns
+            column_comment DESCRIPTION
+        FROM information_schema.columns
         where table_schema = ?
             AND table_name = ?
         ORDER BY ordinal_position

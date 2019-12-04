@@ -52,7 +52,8 @@ public class TableModel {
     private String tablespace;
 
     //索引字段列表
-    private List<ColumnModel> columnModels = new ArrayList<>();
+    private List<ColumnModel> columns = new ArrayList<>();
+
     public String getModelPackageName() {
         return modelPackageName;
     }
@@ -157,11 +158,11 @@ public class TableModel {
         this.tablespace = tablespace;
     }
 
-    public List<ColumnModel> getColumnModels() {
-        return columnModels;
+    public List<ColumnModel> getColumns() {
+        return columns;
     }
 
-    public void setColumnModels(List<ColumnModel> columnModels) {
-        this.columnModels = columnModels;
+    public void setColumns(List<ColumnModel> columns) {
+        this.columns = columns;
     }
 }

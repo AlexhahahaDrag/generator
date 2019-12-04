@@ -123,7 +123,7 @@ public class GenerateServiceImpl implements GenerateService {
             //设置表对应的实例名
             tableModel.setObjectName(StringUtils.uncapitalize(tableModel.getClassName()));
             //加载表字段
-            tableModel.setColumnModels(getColumns(tableModel, connParam, tableName));
+            tableModel.setColumns(getColumns(tableModel, connParam, tableName));
         }
         return generateModel;
     }
@@ -174,19 +174,20 @@ public class GenerateServiceImpl implements GenerateService {
         for (TableModel tableModel : generateModel.getTableModels()) {
             //设置各类代码包名
             tableModel.setModelPackageName(getPackageName(generateModel.getBasePackage(), PACKAGE_MODEL));
+            tableModel.setSqlMapPackageName(getPackageName(generateModel.getBasePackage(), PACKAGE_SQLMAP));
             tableModel.setDaoPackageName(getPackageName(generateModel.getBasePackage(), PACKAGE_DAO));
             tableModel.setServiceImplPackageName(getPackageName(generateModel.getBasePackage(), PACKAGE_SERVICE_IMPL));
             tableModel.setServicePackageName(getPackageName(generateModel.getBasePackage(), PACKAGE_SERVICE));
             tableModel.setControllerPackageName(getPackageName(generateModel.getBasePackage(), PACKAGE_CONTROLLER));
             generateModel(groupTemplate, tableModel, TEMPLATE_MODEL, generateModel.getOutPutFolderPath());
-            generateModel(groupTemplate, tableModel, TEMPLATE_VIEW, generateModel.getOutPutFolderPath());
+         /*   generateModel(groupTemplate, tableModel, TEMPLATE_VIEW, generateModel.getOutPutFolderPath());*/
             generateModel(groupTemplate, tableModel, TEMPLATE_SQLMAP, generateModel.getOutPutFolderPath());
             generateModel(groupTemplate, tableModel, TEMPLATE_MAPPER, generateModel.getOutPutFolderPath());
             generateModel(groupTemplate, tableModel, TEMPLATE_SERVICE_IMPL, generateModel.getOutPutFolderPath());
             generateModel(groupTemplate, tableModel, TEMPLATE_SERVICE, generateModel.getOutPutFolderPath());
             generateModel(groupTemplate, tableModel, TEMPLATE_CONTROLLER, generateModel.getOutPutFolderPath());
         }
-        return false;
+        return true;
     }
 
     private String getPackageName(String basePackage, String subPackage) {

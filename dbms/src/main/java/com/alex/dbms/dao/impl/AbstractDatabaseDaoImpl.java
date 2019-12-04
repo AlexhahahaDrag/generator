@@ -99,7 +99,7 @@ public abstract class AbstractDatabaseDaoImpl implements IDatabaseDao {
     public List<Column> getColumns(String tableName) throws DAOException {
         List<Column> columns = new ArrayList<>();
         try {
-            List<Map<String, String>> result = query(getQuerySql(QUERY_COLUMN), null);
+            List<Map<String, String>> result = query(getQuerySql(QUERY_COLUMN), new String[] {tableName});
             for (Map<String, String> map : result)
                 columns.add(converter.convertMap2Column(map));
         } catch (DAOException e) {

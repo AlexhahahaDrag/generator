@@ -67,12 +67,12 @@ public class ColumnModel {
         this.javaType = javaType;
     }
 
-    public Boolean getPrimaryKey() {
+    public Boolean isPrimaryKey() {
         return isPrimaryKey;
     }
 
-    public void setPrimaryKey(Boolean primaryKey) {
-        isPrimaryKey = primaryKey;
+    public void setPrimaryKey(Boolean isPrimaryKey) {
+        this.isPrimaryKey = isPrimaryKey;
     }
 
     public String getGetter() {
@@ -115,7 +115,7 @@ public class ColumnModel {
         this.dataType = dataType;
     }
 
-    public Boolean getNullable() {
+    public Boolean isNullable() {
         return isNullable;
     }
 

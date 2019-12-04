@@ -5,20 +5,20 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.louis.kitty.core.page.MybatisPageHelper;
-import com.louis.kitty.core.page.PageRequest;
-import com.louis.kitty.core.page.PageResult;
+import com.alex.core.page.MybatisPageHelper;
+import com.alex.core.page.PageRequest;
+import com.alex.core.page.PageResult;
 
 import ${table.modelPackageName}.${table.className};
-import ${table.modelPackageName}.${table.className}Mapper;
-import ${table.modelPackageName}.${table.className}Service;
+import ${table.daoPackageName}.${table.className}Mapper;
+import ${table.servicePackageName}.${table.className}Service;
 
 /**
  *-------------------------------
  * ${table.description} (${table.className}ServiceImpl)
  *------------------------
  * author: alex
- * createDate: ${strutil.fromateDate(date(), 'yyyy-MM-dd HH:mm:ss')}
+ * createDate: ${strutil.formatDate(date(), 'yyyy-MM-dd HH:mm:ss')}
  * description: 我是由代码生成器生成
  * version: 1.0.0
  */
@@ -32,7 +32,7 @@ public class ${table.className}ServiceImpl implements ${table.className}Service 
     public int saveOrUpdate(${table.className} record) {
         if (record.${table.primaryKey.getter}() == null || record.${table.primaryKey.getter}() == 0)
             return ${table.objectName}Mapper.add(record);
-        return ${table.objectName}Mapper.udpate(record);
+        return ${table.objectName}Mapper.update(record);
     }
 
     @Override
@@ -49,7 +49,7 @@ public class ${table.className}ServiceImpl implements ${table.className}Service 
 
     @Override
     public ${table.className} findById(${table.primaryKey.javaType} ${table.primaryKey.fieldName}) {
-        return ${table.className}Mapper.findById(${table.primaryKey.fieldName});
+        return ${table.objectName}Mapper.findById(${table.primaryKey.fieldName});
     }
 
     @Override
