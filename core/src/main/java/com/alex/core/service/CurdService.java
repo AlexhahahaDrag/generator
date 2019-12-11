@@ -12,7 +12,7 @@ import java.util.List;
  * @Version:    1.0
  *
 */
-public interface CrudService<T> {
+public interface CurdService<T> {
 
     /**
      * @Description: 保存操作
@@ -21,7 +21,7 @@ public interface CrudService<T> {
      * @param
      * @return
     */
-    int save(T record);
+    int saveOrUpdate(T record);
 
     /**
      * @Description: 删除操作
