@@ -180,7 +180,9 @@ public class GenerateServiceImpl implements GenerateService {
             tableModel.setServicePackageName(getPackageName(generateModel.getBasePackage(), PACKAGE_SERVICE));
             tableModel.setControllerPackageName(getPackageName(generateModel.getBasePackage(), PACKAGE_CONTROLLER));
             generateModel(groupTemplate, tableModel, TEMPLATE_MODEL, generateModel.getOutPutFolderPath());
-         /*   generateModel(groupTemplate, tableModel, TEMPLATE_VIEW, generateModel.getOutPutFolderPath());*/
+/*
+            generateModel(groupTemplate, tableModel, TEMPLATE_VIEW, generateModel.getOutPutFolderPath());
+*/
             generateModel(groupTemplate, tableModel, TEMPLATE_SQLMAP, generateModel.getOutPutFolderPath());
             generateModel(groupTemplate, tableModel, TEMPLATE_MAPPER, generateModel.getOutPutFolderPath());
             generateModel(groupTemplate, tableModel, TEMPLATE_SERVICE_IMPL, generateModel.getOutPutFolderPath());
@@ -238,7 +240,7 @@ public class GenerateServiceImpl implements GenerateService {
             suffix = MAPPER_SUFFIX;
         } else if (TEMPLATE_SQLMAP.equals(templatePath)) {
             packageName = tableModel.getSqlMapPackageName();
-            suffix = MAPPER_SUFFIX;
+            suffix = SQL_MAP_SUFFIX;
         } else if (TEMPLATE_VIEW.equals(templatePath)) {
             packageName = tableModel.getViewPackageName();
             suffix = VIEW_SUFFIX;

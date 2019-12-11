@@ -25,7 +25,7 @@ public class MybatisPageHelper {
      * @param mapper dao对象 mybatis的mapper
      * @return
     */
-    public static PageResult fingPage(PageRequest pageRequest, Object mapper) {
+    public static PageResult findPage(PageRequest pageRequest, Object mapper) {
         return findPage(pageRequest, mapper, findPage);
     }
 
