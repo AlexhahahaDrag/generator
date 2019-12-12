@@ -45,8 +45,7 @@ public interface ${table.className}Mapper {
 
     /**
      *@description 基础分页查询
-     *@param pageRequest
      *@return
     */
-    List<${table.className}> findPage(PageRequest pageRequest);
+    List<${table.className}> findPage();
 }
