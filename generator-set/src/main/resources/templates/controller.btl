@@ -36,7 +36,7 @@ public class ${table.className}Controller {
     private ${table.className}Service ${table.objectName}Service;
 
     /**
-     * @description 保存/修改${table.description}
+     * description 保存/修改${table.description}
      * @param record
      * @return
     */
@@ -48,7 +48,7 @@ public class ${table.className}Controller {
     }
 
     /**
-     * @description 删除${table.description}
+     * description 删除${table.description}
      * @param records
      * @return
     */
@@ -60,7 +60,7 @@ public class ${table.className}Controller {
     }
 
     /**
-     *@description 根据主键查询
+     *description 根据主键查询
      *@param ${table.primaryKey.fieldName}
      *@return
     */
@@ -72,7 +72,7 @@ public class ${table.className}Controller {
     }
 
     /**
-     *@description 基础分页查询
+     *description 基础分页查询
      *@param pageRequest
      *@return
     */
