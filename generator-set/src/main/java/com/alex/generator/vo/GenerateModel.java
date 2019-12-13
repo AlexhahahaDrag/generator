@@ -16,7 +16,7 @@ public class GenerateModel {
 
     private String outPutFolderPath;
 
-    private String basePackage = "com.alex.kittylearn";
+    private String basePackage = "com.alex.alexadmin";
 
     private ConnParam connParam;
 

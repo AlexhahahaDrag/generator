@@ -2,6 +2,8 @@ package ${table.controllerPackageName};
 
 import java.util.List;
 
+import io.swagger.annotations.*;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.louis.kitty.core.http.HttpResult;
-import com.louis.kitty.core.page.PageRequest;
+import com.alex.alexcore.http.HttpResult;
+import com.alex.alexcore.page.PageRequest;
 
 import ${table.modelPackageName}.${table.className};
 import ${table.servicePackageName}.${table.className}Service;
@@ -25,6 +27,7 @@ import ${table.servicePackageName}.${table.className}Service;
  * description: 我是由代码生成器生成
  * version: 1.0.0
  */
+ @Api(value ="${table.className}Controller", tags={"${table.description}"})
  @RestController
  @RequestMapping("/${table.objectName}")
 public class ${table.className}Controller {
@@ -37,9 +40,11 @@ public class ${table.className}Controller {
      * @param record
      * @return
     */
-    @PostMapping(value = "/saveOrUpdate")
-    public HttpResult saveOrUpdate(@RequestBody ${table.className} record) {
-        return HttpResult.ok(${table.objectName}Service.saveOrUpdate(record));
+    @ApiOperation(value = "保存${table.description}")
+    @PostMapping(value = "/save")
+    @RequiresPermissions("sys:${table.objectName}:save")
+    public HttpResult save(@RequestBody ${table.className} record) {
+        return HttpResult.ok(${table.objectName}Service.save(record));
     }
 
     /**
@@ -47,7 +52,9 @@ public class ${table.className}Controller {
      * @param records
      * @return
     */
+    @ApiOperation(value = "删除${table.description}")
     @PostMapping(value = "/delete")
+    @RequiresPermissions("sys:${table.objectName}:delete")
     public HttpResult delete(@RequestBody List<${table.className}> records) {
         return HttpResult.ok(${table.objectName}Service.delete(records));
     }
@@ -57,7 +64,9 @@ public class ${table.className}Controller {
      *@param ${table.primaryKey.fieldName}
      *@return
     */
+    @ApiOperation(value = "通过id查询${table.description}")
     @GetMapping(value = "/findById")
+    @RequiresPermissions("sys:${table.objectName}:view")
     public HttpResult findById(@RequestParam("${table.primaryKey.fieldName}") ${table.primaryKey.javaType} ${table.primaryKey.fieldName}) {
         return HttpResult.ok(${table.objectName}Service.findById(${table.primaryKey.fieldName}));
     }
@@ -67,7 +76,9 @@ public class ${table.className}Controller {
      *@param pageRequest
      *@return
     */
+    @ApiOperation(value = "分页查询${table.description}")
     @PostMapping(value = "/findPage")
+    @RequiresPermissions("sys:${table.objectName}:view")
     public HttpResult findPage(@RequestBody PageRequest pageRequest) {
         return HttpResult.ok(${table.objectName}Service.findPage(pageRequest));
     }

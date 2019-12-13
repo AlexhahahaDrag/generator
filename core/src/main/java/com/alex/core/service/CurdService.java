@@ -21,7 +21,7 @@ public interface CurdService<T> {
      * @param
      * @return
     */
-    int saveOrUpdate(T record);
+    int save(T record);
 
     /**
      * @Description: 删除操作

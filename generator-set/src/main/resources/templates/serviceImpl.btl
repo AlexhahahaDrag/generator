@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.alex.core.page.MybatisPageHelper;
-import com.alex.core.page.PageRequest;
-import com.alex.core.page.PageResult;
+import com.alex.alexcore.page.MybatisPageHelper;
+import com.alex.alexcore.page.PageRequest;
+import com.alex.alexcore.page.PageResult;
 
 import ${table.modelPackageName}.${table.className};
 import ${table.daoPackageName}.${table.className}Mapper;
@@ -29,7 +29,7 @@ public class ${table.className}ServiceImpl implements ${table.className}Service 
     private ${table.className}Mapper ${table.objectName}Mapper;
 
     @Override
-    public int saveOrUpdate(${table.className} record) {
+    public int save(${table.className} record) {
         if (record.${table.primaryKey.getter}() == null || record.${table.primaryKey.getter}() == 0)
             return ${table.objectName}Mapper.add(record);
         return ${table.objectName}Mapper.update(record);

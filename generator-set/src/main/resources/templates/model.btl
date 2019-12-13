@@ -1,5 +1,7 @@
 package ${table.modelPackageName};
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 /**
  *-------------------------------
  * ${table.description} (${table.className})
@@ -9,13 +11,15 @@ package ${table.modelPackageName};
  * description: 我是由代码生成器生成
  * version: 1.0.0
  */
+@ApiModel(value="${table.className}对象", description="${table.description}")
 public class ${table.className} {
 
 <%
     for (column in table.columns) {
 %>
-    /** ${column.description} */
+    @ApiModelProperty(value = "${column.description}")
     private ${column.javaType} ${column.fieldName};
+
 <%
     }
 %>
